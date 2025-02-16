@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from joblib import load
+import joblib as jl
 import plotly.express as px
+
 # Se quiser apenas st.line_chart, pode usar matplotlib ou streamlit nativo
 
 st.title("Previsão de Preço do Petróleo (Brent)")
@@ -14,7 +15,7 @@ Este aplicativo carrega um modelo *Prophet* previamente treinado (salvo em
 
 # 1) Carregando o modelo Prophet
 try:
-    modelo_prophet = load('modelo_prophet.joblib')
+    modelo_prophet = jl.load('modelo_prophet.joblib')
     st.success("Modelo Prophet carregado com sucesso!")
 except FileNotFoundError:
     st.error("Arquivo 'modelo_prophet.joblib' não encontrado! "
