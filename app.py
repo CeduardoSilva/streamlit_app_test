@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import joblib as jl
 import plotly.express as px
+from prophet import Prophet
 
 # Se quiser apenas st.line_chart, pode usar matplotlib ou streamlit nativo
 
